@@ -43,7 +43,36 @@
             }
         }
 
-        
+        function game() {
+            userScore = 0;
+            compScore = 0;
+            
+            while (userScore < 5 && compScore < 5) {
+                userSelection = prompt('Enter your choice.')
+                compSelection = getComputerChoice();
+                gameOutcome = playRound(userSelection, compSelection);
+                if (gameOutcome == 'win') {
+                    userScore = userScore + 1;
+                    console.log(`You win! ${userSelection} beats ${compSelection}.`)
+                    console.log(`The score is ${userScore}-${compScore}`)
+                } else if (gameOutcome == 'lose') {
+                    compScore = compScore + 1;
+                    console.log(`You lose. ${userSelection} beats ${compSelection}.`)
+                    console.log(`The score is ${userScore}-${compScore}`)
+                } else {
+                    console.log('It is a tie.')
+                    console.log(`The score is ${userScore}-${compScore}`)
+                }
+            }
+
+            if (userScore == 5) {
+                console.log('You beat the computer!')
+            } else {
+                console.log('The computer beat you.')
+            }
+        }
+    game()
+
     </script>
 </body>
 </html>
