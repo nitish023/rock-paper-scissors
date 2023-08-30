@@ -22,6 +22,28 @@
             return finalOutcome;
         }
 
+        function playRound(playerSelection, computerSelection) {
+            updatedPlayer = playerSelection.toLowerCase();
+            updatedComputer = computerSelection.toLowerCase();
+            
+            if (updatedPlayer == 'rock' && updatedComputer == 'scissors') {
+                return ('win');
+            } else if (updatedPlayer == 'rock' && updatedComputer == 'paper') {
+                return ('lose');
+            } else if (updatedPlayer == 'paper' && updatedComputer == 'scissors') {
+                return ('lose');
+            } else if (updatedPlayer == 'paper' && updatedComputer == 'rock') {
+                return ('win');
+            } else if (updatedPlayer == 'scissors' && updatedComputer == 'rock') {
+                return ('lose');
+            } else if (updatedPlayer == 'scissors' && updatedComputer == 'paper') {
+                return ('win');
+            } else {
+                return ('tie');
+            }
+        }
+
+        
     </script>
 </body>
 </html>
